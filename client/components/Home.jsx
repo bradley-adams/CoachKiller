@@ -24,6 +24,7 @@ componentDidMount(){
 render(){
     return (
       <div>
+        <h1>Coach Killer</h1>
         <Link to={`/pickteam`}>
           <button className="pick-button">Pick your team here</button>
         </Link>
@@ -33,7 +34,7 @@ render(){
           <div className="grid-item">
             <p>{players.name}</p>
             <p>{players.team}</p>
-            <img src={players.profile_pic}/>
+            <img className="homePagePics" src={players.profile_pic}/>
           </div>
           </div>
           })}

@@ -5,10 +5,10 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('players').insert([
-        {id: 99901, name: 'Ardie Savea', position:'prop', team: 'Hurricanes', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p2134.jpg'},
+        {id: 99901, name: 'Ardie Savea', position:'flanker', team: 'Hurricanes', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p2134.jpg'},
         {id: 99902, name: 'Brodie Retallick', position:'lock', team: 'Cheifs', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p2131.jpg'},
         {id: 99903, name: 'Codie Taylor', position:'hooker', team: 'Crusaders', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p1940.jpg'},
-        {id: 99904, name: 'Jeffery Toomaga-Allen', position:'openside', team: 'Hurricanes', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p2357.jpg'},
+        {id: 99904, name: 'Jeffery Toomaga-Allen', position:'prop', team: 'Hurricanes', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p2357.jpg'},
         {id: 99905, name: 'Joe Moody', position:'prop', team: 'Crusaders', profile_pic:'http://media.allblacks.com/dnaImages/PlayersSecondary/p2400.jpg'},
         {id: 99906, name: 'Jordan Taufua', position:'flanker', team: 'Crusaders', profile_pic:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ8w0XE06IKCRvyabBdolj5QAXyeokiakkCTztx1PY5nn0dk8B9A'},
         {id: 99907, name: 'Karl Tuinukuafe', position:'prop', team: 'Cheifs', profile_pic:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHTOmwBMa3lmpNo5UiG_RvEjgto-NfmTu8DxmwVXwv11Eo3gvdiw'},
