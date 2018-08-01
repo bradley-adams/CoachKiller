@@ -29036,7 +29036,7 @@ var Compare = function (_React$Component) {
     key: 'isMatch',
     value: function isMatch(position, i) {
       console.log(this.state.coach[i].player);
-      if (position.player.name !== this.state.coach[i].player) return "<--False-->";else return;
+      if (position.player.name !== this.state.coach[i].player) return "<--False-->";else return " ";
     }
   }, {
     key: 'createScore',
@@ -29067,68 +29067,97 @@ var Compare = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h1',
+          'div',
           null,
-          'Coach Killer'
-        ),
-        _react2.default.createElement(
-          'h3',
-          { className: 'teamScore' },
-          'Team Score: ',
-          this.state.score
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'allTeamHeadings' },
           _react2.default.createElement(
-            'h3',
-            { className: 'coachTeamHeading' },
-            'Coaches Team'
+            'h1',
+            null,
+            'Coach Killer'
           ),
           _react2.default.createElement(
             'h3',
-            { className: 'myTeamHeading' },
-            'Your Team'
+            { className: 'teamScore' },
+            'Team Score: ',
+            this.state.score
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'allTeamHeadings' },
+            _react2.default.createElement(
+              'h3',
+              { className: 'coachTeamHeading' },
+              'Coaches Team'
+            ),
+            _react2.default.createElement(
+              'h3',
+              { className: 'myTeamHeading' },
+              'Your Team'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'allPlayers' },
+            _react2.default.createElement(
+              'div',
+              { className: 'allCoachPlayers' },
+              this.state.coach.map(function (coach) {
+                return _react2.default.createElement(
+                  'div',
+                  { className: 'coachPlayers', key: coach.player },
+                  coach.player
+                );
+              })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'trueFalse' },
+              this.state.positions.map(function (position, i) {
+                return _react2.default.createElement(
+                  'div',
+                  { className: 'matchedPlayers', key: position.player.id },
+                  ' ',
+                  _this3.isMatch(position, i)
+                );
+              })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'allSelectedPlayers' },
+              this.state.positions.map(function (position, i) {
+                return _react2.default.createElement(
+                  'div',
+                  { className: 'selectedPlayers', key: position.player.id },
+                  position.player.name,
+                  ' '
+                );
+              })
+            )
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'allPlayers' },
-          _react2.default.createElement(
-            'div',
-            { className: 'allCoachPlayers' },
-            this.state.coach.map(function (coach) {
-              return _react2.default.createElement(
+          { className: 'comparison' },
+          this.state.players.map(function (players) {
+            return _react2.default.createElement(
+              'div',
+              { key: players.name },
+              _react2.default.createElement(
                 'div',
-                { className: 'coachPlayers', key: coach.player },
-                coach.player
-              );
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'trueFalse' },
-            this.state.positions.map(function (position, i) {
-              return _react2.default.createElement(
-                'div',
-                { className: 'matchedPlayers', key: position.player.id },
-                ' ',
-                _this3.isMatch(position, i)
-              );
-            })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'allSelectedPlayers' },
-            this.state.positions.map(function (position, i) {
-              return _react2.default.createElement(
-                'div',
-                { className: 'selectedPlayers', key: position.player.id },
-                position.player.name,
-                ' '
-              );
-            })
-          )
+                { className: 'grid-item' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  players.name
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  players.team
+                ),
+                _react2.default.createElement('img', { className: 'homePagePics', src: players.profile_pic })
+              )
+            );
+          })
         )
       );
     }

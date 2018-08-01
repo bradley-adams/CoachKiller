@@ -59,7 +59,7 @@ class Compare extends React.Component{
     console.log(this.state.coach[i].player)
     if (position.player.name !== this.state.coach[i].player)
     return "<--False-->"
-    else return
+    else return " "
   }
 
   createScore(){
@@ -83,34 +83,48 @@ render(){
   console.log(this.state.positions)
   return (
     <div>
-      <h1>Coach Killer</h1>
-      <h3 className="teamScore">Team Score: {this.state.score}</h3>
-      <div className="allTeamHeadings">
-        <h3 className="coachTeamHeading">Coaches Team</h3>
-        <h3 className="myTeamHeading">Your Team</h3>
+      <div>
+        <h1>Coach Killer</h1>
+        <h3 className="teamScore">Team Score: {this.state.score}</h3>
+        <div className="allTeamHeadings">
+          <h3 className="coachTeamHeading">Coaches Team</h3>
+          <h3 className="myTeamHeading">Your Team</h3>
+        </div>
+
+        <div className="allPlayers">
+
+          <div className="allCoachPlayers">
+            {this.state.coach.map((coach) =>
+              <div className="coachPlayers" key={coach.player}>{coach.player}</div>
+            )}
+          </div>
+
+          <div className="trueFalse">
+            {this.state.positions.map((position, i) =>
+              <div className="matchedPlayers" key={position.player.id}> {this.isMatch(position, i)}</div>
+            )}
+          </div>
+
+          <div className="allSelectedPlayers">
+            {this.state.positions.map((position, i) =>
+              <div className="selectedPlayers" key={position.player.id}>{position.player.name} </div>
+            )}
+          </div>
+        </div>
       </div>
       
-      <div className="allPlayers">
-
-        <div className="allCoachPlayers">
-          {this.state.coach.map((coach) =>
-            <div className="coachPlayers" key={coach.player}>{coach.player}</div>
-          )}
-        </div>
-
-        <div className="trueFalse">
-          {this.state.positions.map((position, i) =>
-            <div className="matchedPlayers" key={position.player.id}> {this.isMatch(position, i)}</div>
-          )}
-        </div>
-
-        <div className="allSelectedPlayers">
-          {this.state.positions.map((position, i) =>
-            <div className="selectedPlayers" key={position.player.id}>{position.player.name} </div>
-          )}
-        </div>
-
+      <div className="comparison">
+      {this.state.players.map(players =>{
+            return <div key={players.name}>
+          <div className="grid-item">
+            <p>{players.name}</p>
+            <p>{players.team}</p>
+            <img className="homePagePics" src={players.profile_pic}/>
+          </div>
+          </div>
+          })}
       </div>
+
     </div>
   )
 }

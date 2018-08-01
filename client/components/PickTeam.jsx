@@ -33,7 +33,7 @@ class PickTeam extends React.Component{
   this.onSubmit=this.onSubmit.bind(this)
 
 }
-
+ 
 
 componentDidMount(){
   request.get('/players')
