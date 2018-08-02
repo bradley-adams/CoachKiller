@@ -28999,10 +28999,11 @@ var Compare = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Compare.__proto__ || Object.getPrototypeOf(Compare)).call(this, props));
 
     _this.state = {
+      spots: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
       players: [],
       score: 0,
       positions: props.positions || [],
-      // positions: [{player:"Joe Moody"}, 
+      // positions: [{player:"Anton Sales"}, 
       // {player:"Codie Taylor"}, 
       // {player:"Owen Franks"}, 
       // {player:"Samuel Whitelock"}, 
@@ -29016,13 +29017,13 @@ var Compare = function (_React$Component) {
       // {player:"Sonny Bill Williams"}, 
       // {player:"Jack Goodhue"}, 
       // {player:"Waisake Naholo"}, 
-      // {player:"Ben Smith"}],
+      // {player:"Bradley Adams"}],
 
       coach: [{ player: "Joe Moody" }, { player: "Codie Taylor" }, { player: "Owen Franks" }, { player: "Samuel Whitelock" }, { player: "Scott Barrett" }, { player: "Shannon Frizell" }, { player: "Ardie Savea" }, { player: "Luke Whitelock" }, { player: "Aaron Smith" }, { player: "Damian McKenzie" }, { player: "Rieko Ioane" }, { player: "Sonny Bill Williams" }, { player: "Jack Goodhue" }, { player: "Waisake Naholo" }, { player: "Ben Smith" }]
     };
 
     _this.createScore = _this.createScore.bind(_this);
-    _this.isMatch = _this.isMatch.bind(_this);
+    // this.isMatch = this.isMatch.bind(this)
 
     return _this;
   }
@@ -29032,12 +29033,13 @@ var Compare = function (_React$Component) {
     value: function componentDidMount() {
       this.createScore();
     }
-  }, {
-    key: 'isMatch',
-    value: function isMatch(position, i) {
-      console.log(this.state.coach[i].player);
-      if (position.player.name !== this.state.coach[i].player) return "<--False-->";else return " ";
-    }
+
+    // isMatch(position, i) {
+    //   console.log(this.state.coach[i].player)
+    //   if (position.player.name !== this.state.coach[i].player)
+    //     return "<--False-->"
+    // }
+
   }, {
     key: 'createScore',
     value: function createScore() {
@@ -29063,6 +29065,7 @@ var Compare = function (_React$Component) {
       var _this3 = this;
 
       console.log(this.state.positions);
+      console.log(this.state.positions[0].id);
       return _react2.default.createElement(
         'div',
         null,
@@ -29079,82 +29082,33 @@ var Compare = function (_React$Component) {
             { className: 'teamScore' },
             'Team Score: ',
             this.state.score
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'allTeamHeadings' },
-            _react2.default.createElement(
-              'h3',
-              { className: 'coachTeamHeading' },
-              'Coaches Team'
-            ),
-            _react2.default.createElement(
-              'h3',
-              { className: 'myTeamHeading' },
-              'Your Team'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'allPlayers' },
-            _react2.default.createElement(
-              'div',
-              { className: 'allCoachPlayers' },
-              this.state.coach.map(function (coach) {
-                return _react2.default.createElement(
-                  'div',
-                  { className: 'coachPlayers', key: coach.player },
-                  coach.player
-                );
-              })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'trueFalse' },
-              this.state.positions.map(function (position, i) {
-                return _react2.default.createElement(
-                  'div',
-                  { className: 'matchedPlayers', key: position.player.id },
-                  ' ',
-                  _this3.isMatch(position, i)
-                );
-              })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'allSelectedPlayers' },
-              this.state.positions.map(function (position, i) {
-                return _react2.default.createElement(
-                  'div',
-                  { className: 'selectedPlayers', key: position.player.id },
-                  position.player.name,
-                  ' '
-                );
-              })
-            )
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'comparison' },
-          this.state.players.map(function (players) {
+          { className: 'compareteam' },
+          this.state.spots.map(function (spot, i) {
             return _react2.default.createElement(
               'div',
-              { key: players.name },
+              { key: spot, className: 'playercompare' },
               _react2.default.createElement(
-                'div',
-                { className: 'grid-item' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  players.name
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  players.team
-                ),
-                _react2.default.createElement('img', { className: 'homePagePics', src: players.profile_pic })
+                'p',
+                { className: 'coachplayercompare' },
+                _this3.state.coach[i].player
+              ),
+              _this3.state.coach[i].player == _this3.state.positions[i].player.name ? _react2.default.createElement(
+                'p',
+                { className: 'compareresult' },
+                'Correct'
+              ) : _react2.default.createElement(
+                'p',
+                null,
+                'Wrong'
+              ),
+              _react2.default.createElement(
+                'p',
+                { className: 'selectedplayercompare' },
+                _this3.state.positions[i].player.name
               )
             );
           })

@@ -213,3 +213,17 @@ h1{
   font-family: 'Gaegu', cursive;
   color: red;
 }
+
+.compareteam{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+}
+
+.playercompare{
+  min-width: 150px;
+  min-height: 150px;
+  border: 2px solid black;
+  padding: 10px;
+}
