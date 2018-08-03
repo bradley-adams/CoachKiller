@@ -29003,21 +29003,21 @@ var Compare = function (_React$Component) {
       players: [],
       score: 0,
       positions: props.positions || [],
-      // positions: [{player:"Anton Sales"}, 
-      // {player:"Codie Taylor"}, 
-      // {player:"Owen Franks"}, 
-      // {player:"Samuel Whitelock"}, 
-      // {player:"Scott Barrett"}, 
-      // {player:"Shannon Frizell"}, 
-      // {player:"Ardie Savea"}, 
-      // {player:"Luke Whitelock"}, 
-      // {player:"Aaron Smith"},
-      // {player:"Damian McKenzie"}, 
-      // {player:"Rieko Ioane"}, 
-      // {player:"Sonny Bill Williams"}, 
-      // {player:"Jack Goodhue"}, 
-      // {player:"Waisake Naholo"}, 
-      // {player:"Bradley Adams"}],
+      // positions: [{ player: "Anton Sales" },
+      // { player: "Codie Taylor" },
+      // { player: "Owen Franks" },
+      // { player: "Samuel Whitelock" },
+      // { player: "Scott Barrett" },
+      // { player: "Shannon Frizell" },
+      // { player: "Ardie Savea" },
+      // { player: "Luke Whitelock" },
+      // { player: "Aaron Smith" },
+      // { player: "Damian McKenzie" },
+      // { player: "Rieko Ioane" },
+      // { player: "Sonny Bill Williams" },
+      // { player: "Jack Goodhue" },
+      // { player: "Waisake Naholo" },
+      // { player: "Bradley Adams" }],
 
       coach: [{ player: "Joe Moody" }, { player: "Codie Taylor" }, { player: "Owen Franks" }, { player: "Samuel Whitelock" }, { player: "Scott Barrett" }, { player: "Shannon Frizell" }, { player: "Ardie Savea" }, { player: "Luke Whitelock" }, { player: "Aaron Smith" }, { player: "Damian McKenzie" }, { player: "Rieko Ioane" }, { player: "Sonny Bill Williams" }, { player: "Jack Goodhue" }, { player: "Waisake Naholo" }, { player: "Ben Smith" }]
     };
@@ -29032,6 +29032,12 @@ var Compare = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.createScore();
+      // request.get('/players')
+      //   .then(res => {
+      //     this.setState({
+      //       players: res.body.players
+      //     })
+      //   })
     }
 
     // isMatch(position, i) {
@@ -29093,17 +29099,27 @@ var Compare = function (_React$Component) {
               { key: spot, className: 'playercompare' },
               _react2.default.createElement(
                 'p',
+                { className: 'compareplayertitle' },
+                'Coach:'
+              ),
+              _react2.default.createElement(
+                'p',
                 { className: 'coachplayercompare' },
                 _this3.state.coach[i].player
               ),
               _this3.state.coach[i].player == _this3.state.positions[i].player.name ? _react2.default.createElement(
                 'p',
-                { className: 'compareresult' },
+                { className: 'comparetrue' },
                 'Correct'
               ) : _react2.default.createElement(
                 'p',
-                null,
+                { className: 'comparefalse' },
                 'Wrong'
+              ),
+              _react2.default.createElement(
+                'p',
+                { className: 'compareplayertitle' },
+                'Your Player:'
               ),
               _react2.default.createElement(
                 'p',

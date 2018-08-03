@@ -218,12 +218,26 @@ h1{
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 10px;
 }
 
 .playercompare{
   min-width: 150px;
   min-height: 150px;
   border: 2px solid black;
-  padding: 10px;
+  padding: 10px 10px;
+  margin: 10px;
+}
+
+.comparetrue{
+  color: LimeGreen;
+  font-weight: bold;
+}
+
+.comparefalse{
+  color: red;
+  font-weight: bold;
+}
+
+.compareplayertitle{
+  font-weight: bold;
 }

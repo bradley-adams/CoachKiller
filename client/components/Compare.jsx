@@ -14,21 +14,21 @@ class Compare extends React.Component {
       players: [],
       score: 0,
       positions: props.positions || [],
-      // positions: [{player:"Anton Sales"}, 
-      // {player:"Codie Taylor"}, 
-      // {player:"Owen Franks"}, 
-      // {player:"Samuel Whitelock"}, 
-      // {player:"Scott Barrett"}, 
-      // {player:"Shannon Frizell"}, 
-      // {player:"Ardie Savea"}, 
-      // {player:"Luke Whitelock"}, 
-      // {player:"Aaron Smith"},
-      // {player:"Damian McKenzie"}, 
-      // {player:"Rieko Ioane"}, 
-      // {player:"Sonny Bill Williams"}, 
-      // {player:"Jack Goodhue"}, 
-      // {player:"Waisake Naholo"}, 
-      // {player:"Bradley Adams"}],
+      // positions: [{ player: "Anton Sales" },
+      // { player: "Codie Taylor" },
+      // { player: "Owen Franks" },
+      // { player: "Samuel Whitelock" },
+      // { player: "Scott Barrett" },
+      // { player: "Shannon Frizell" },
+      // { player: "Ardie Savea" },
+      // { player: "Luke Whitelock" },
+      // { player: "Aaron Smith" },
+      // { player: "Damian McKenzie" },
+      // { player: "Rieko Ioane" },
+      // { player: "Sonny Bill Williams" },
+      // { player: "Jack Goodhue" },
+      // { player: "Waisake Naholo" },
+      // { player: "Bradley Adams" }],
 
       coach: [{ player: "Joe Moody" },
       { player: "Codie Taylor" },
@@ -54,6 +54,12 @@ class Compare extends React.Component {
 
   componentDidMount() {
     this.createScore()
+    // request.get('/players')
+    //   .then(res => {
+    //     this.setState({
+    //       players: res.body.players
+    //     })
+    //   })
   }
 
   // isMatch(position, i) {
@@ -93,13 +99,14 @@ class Compare extends React.Component {
         <div className="compareteam">
           {this.state.spots.map((spot, i) => {
             return <div key={spot} className="playercompare">
-
+              <p className="compareplayertitle">Coach:</p>
               <p className="coachplayercompare">{this.state.coach[i].player}</p>
 
               {this.state.coach[i].player == this.state.positions[i].player.name
-                ? <p className="compareresult">Correct</p>
-                : <p>Wrong</p>}
+                ? <p className="comparetrue">Correct</p>
+                : <p className="comparefalse">Wrong</p>}
 
+              <p className="compareplayertitle">Your Player:</p>
               <p className="selectedplayercompare">{this.state.positions[i].player.name}</p>
 
             </div>
