@@ -24149,6 +24149,14 @@ var _Compare = __webpack_require__(110);
 
 var _Compare2 = _interopRequireDefault(_Compare);
 
+var _MeetThePlayers = __webpack_require__(115);
+
+var _MeetThePlayers2 = _interopRequireDefault(_MeetThePlayers);
+
+var _Nav = __webpack_require__(116);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -24158,9 +24166,11 @@ var App = function App() {
     _react2.default.createElement(
       'div',
       null,
+      _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _Nav2.default }),
       _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/pickteam', component: _PickTeam2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { path: '/compare', component: _Compare2.default })
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/meettheplayers', component: _MeetThePlayers2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/pickteam', component: _PickTeam2.default }),
+      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/compare', component: _Compare2.default })
     )
   );
 };
@@ -26681,41 +26691,7 @@ var Home = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Coach Killer'
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/pickteam' },
-          _react2.default.createElement(
-            'button',
-            { className: 'pick-button' },
-            'Pick your team here'
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'grid-container' },
-          this.state.players.map(function (players) {
-            return _react2.default.createElement(
-              'div',
-              { key: players.name },
-              _react2.default.createElement(
-                'div',
-                { className: 'grid-item' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  players.name
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  players.team
-                ),
-                _react2.default.createElement('img', { className: 'homePagePics', src: players.profile_pic })
-              )
-            );
-          })
+          'Home'
         )
       );
     }
@@ -27949,7 +27925,7 @@ var PickTeam = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Coach Killer'
+          'Pick The Team'
         ),
         _react2.default.createElement(
           'form',
@@ -29246,6 +29222,207 @@ function reducer() {
 }
 
 exports.default = reducer;
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _superagent = __webpack_require__(19);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MeetThePlayers = function (_React$Component) {
+  _inherits(MeetThePlayers, _React$Component);
+
+  function MeetThePlayers(props) {
+    _classCallCheck(this, MeetThePlayers);
+
+    var _this = _possibleConstructorReturn(this, (MeetThePlayers.__proto__ || Object.getPrototypeOf(MeetThePlayers)).call(this, props));
+
+    _this.state = {
+      players: []
+    };
+    return _this;
+  }
+
+  _createClass(MeetThePlayers, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _superagent2.default.get('/players').then(function (res) {
+        _this2.setState({
+          players: res.body.players
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Meet The Players:'
+        ),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'div',
+            { className: 'grid-container' },
+            this.state.players.map(function (players) {
+              return _react2.default.createElement(
+                'div',
+                { key: players.name },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'grid-item' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    players.name
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    players.team
+                  ),
+                  _react2.default.createElement('img', { className: 'homePagePics', src: players.profile_pic })
+                )
+              );
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return MeetThePlayers;
+}(_react2.default.Component);
+
+exports.default = MeetThePlayers;
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(28);
+
+var _superagent = __webpack_require__(19);
+
+var _superagent2 = _interopRequireDefault(_superagent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Nav = function (_React$Component) {
+  _inherits(Nav, _React$Component);
+
+  function Nav(props) {
+    _classCallCheck(this, Nav);
+
+    var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
+
+    _this.state = {
+      players: []
+    };
+    return _this;
+  }
+
+  _createClass(Nav, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      _superagent2.default.get('/players').then(function (res) {
+        _this2.setState({
+          players: res.body.players
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { className: 'homeTitle', to: '/' },
+            'Coach Killer'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/meettheplayers' },
+          _react2.default.createElement(
+            'button',
+            { className: 'pick-button' },
+            'Meet the players here'
+          )
+        ),
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/pickteam' },
+          _react2.default.createElement(
+            'button',
+            { className: 'pick-button' },
+            'Pick your team here'
+          )
+        )
+      );
+    }
+  }]);
+
+  return Nav;
+}(_react2.default.Component);
+
+exports.default = Nav;
 
 /***/ })
 /******/ ]);

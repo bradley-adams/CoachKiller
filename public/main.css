@@ -241,3 +241,8 @@ h1{
 .compareplayertitle{
   font-weight: bold;
 }
+
+.homeTitle{
+  text-decoration:none;
+  color: black;
+}
