@@ -23,8 +23,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Home</h1>
+      <div class>
+        <img className="homeimg" src="images/old.jpeg"/>
+        <p></p>
       </div>
     )
   }

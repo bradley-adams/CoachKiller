@@ -1,3 +1,7 @@
+body{
+  margin: 0px;
+}
+
 h1{
   color: black;
   margin: 20px;
@@ -30,16 +34,19 @@ h1{
   text-align: center;
 }
 /* Button on home page to go to pickTeam */
-.pick-button {
+.navbutton {
   background-color: black;
+  border: none;
   color: white;
-  border: 2px solid black;
-  width: 200px;
-  margin: 17px;
-  line-height: 20px;
+  padding: 16px 32px;
   text-align: center;
-  font-family: 'Gaegu', cursive;
-  border-radius: 5px; /* 5px rounded corners */
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .teambox{
@@ -244,5 +251,26 @@ h1{
 
 .homeTitle{
   text-decoration:none;
-  color: black;
+  color: white;
+}
+
+.navbox{
+  padding: 10px;
+  background: gray;
+  display: flex;
+  margin: 0px;
+}
+
+.buttonbox{
+  margin-top: 10px;
+}
+
+.navlogo{
+margin-left: auto;
+}
+
+.homeimg{
+
+  max-width: 1280px;
+  max-height: 843px;
 }

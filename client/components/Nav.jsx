@@ -23,14 +23,17 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="navbox">
         <h1><Link className="homeTitle" to="/">Coach Killer</Link></h1>
-        <Link to={`/meettheplayers`}>
-          <button className="pick-button">Meet the players here</button>
-        </Link>
-        <Link to={`/pickteam`}>
-          <button className="pick-button">Pick your team here</button>
-        </Link>
+        <div className="buttonbox">
+          <Link to={`/meettheplayers`}>
+            <button className="navbutton">Meet the players here</button>
+          </Link>
+          <Link to={`/pickteam`}>
+            <button className="navbutton">Pick your team here</button>
+          </Link>
+        </div>
+        <img className="navlogo" src="images/ablogo.png"/>
       </div>
     )
   }
