@@ -35,7 +35,7 @@ h1{
 }
 /* Button on home page to go to pickTeam */
 .navbutton {
-  background-color: black;
+  background-color: DimGray;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -256,7 +256,7 @@ h1{
 
 .navbox{
   padding: 10px;
-  background: gray;
+  background: black;
   display: flex;
   margin: 0px;
 }
