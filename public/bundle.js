@@ -27922,7 +27922,7 @@ var PickTeam = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Pick The Team'
+          'Pick The Team:'
         ),
         _react2.default.createElement(
           'form',

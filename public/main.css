@@ -50,7 +50,8 @@ h1{
 }
 
 .teambox{
-  border: 2px solid black;
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: auto auto auto;
   background-color: white;
@@ -80,6 +81,8 @@ h1{
   width: 50px;
   padding: 0px;
 }
+
+
 
 /* players under labels */
 .one{
@@ -155,6 +158,104 @@ h1{
   text-align: center;
   font-family: 'Gaegu', cursive;
   border-radius: 5px; /* 5px rounded corners */
+}
+
+@media only screen and (max-width: 1150px){
+  .allPlayerPos{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: darkgray;
+    margin: 10px 0;
+    align-self: center;
+    max-width: 150px;
+    font-family: 'Gaegu', cursive;
+  }
+  
+  .blank{
+    /* border: 1px solid rgba(0, 0, 0, 0.8); */
+    height: 77px;
+    width: 50px;
+    padding: 0px;
+  }
+  
+  /* players under labels */
+  .one{
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+  .two{
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
+  .three{
+    grid-column: 1 / span 4;
+    grid-row: 3;
+  }
+  .four{
+    grid-column: 1 / span 4;
+    grid-row: 4;
+  }
+  .five{
+    grid-column: 1 / span 4;
+    grid-row: 5;
+  }
+  .six{
+    grid-column: 1 / span 4;
+    grid-row: 6;
+  }
+  .seven{
+    grid-column: 1 / span 4;
+    grid-row: 7;
+  }
+  .eight{
+    grid-column: 1 / span 4;
+    grid-row: 8;
+  }
+  .nine{
+    grid-column: 1 / span 4;
+    grid-row: 9;
+  }
+  .ten{
+    grid-column: 1 / span 4;
+    grid-row: 10;
+  }
+  .eleven{
+    grid-column: 1 / span 4;
+    grid-row: 11;
+  }
+  .twelve{
+    grid-column: 1 / span 4;
+    grid-row: 12;
+  }
+  .thirteen{
+    grid-column: 1 / span 4;
+    grid-row: 13;
+  }
+  .fourteen{
+    grid-column: 1 / span 4;
+    grid-row: 14;
+  }
+  .fifteen{
+    grid-column: 1 / span 4;
+    grid-row: 15;
+  }
+  .submit{
+    font-size: 15px;
+    grid-column: 1 / span 4;
+    grid-row: 16 / span 1;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    width: 200px;
+    margin: 17px;
+    line-height: 20px;
+    text-align: center;
+    font-family: 'Gaegu', cursive;
+    border-radius: 5px; /* 5px rounded corners */
+  }
 }
 
 .allTeamHeadings{
@@ -262,7 +363,7 @@ h1{
 }
 
 .buttonbox{
-  margin-top: 10px;
+margin-top: 10px;
 }
 
 .navlogo{
@@ -270,7 +371,6 @@ margin-left: auto;
 }
 
 .homeimg{
-
-  max-width: 1280px;
-  max-height: 843px;
+  height: 100%;
+  width: 100%;
 }
