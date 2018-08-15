@@ -33,7 +33,7 @@ class PickTeam extends React.Component{
   this.onSubmit=this.onSubmit.bind(this)
 
 }
-
+ 
 
 componentDidMount(){
   request.get('/players')
@@ -70,7 +70,7 @@ onSubmit(e){
     const { positions } = this.state
     return (
       <React.Fragment>
-        <h1>Coach Killer</h1>
+        <h1>Pick The Team:</h1>
         <form className="teambox">
           {positions.map((pos) => {
             return (<div key={pos.position} className={`${pos.id} allPlayerPos`}>
