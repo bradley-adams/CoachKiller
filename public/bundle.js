@@ -27917,8 +27917,8 @@ var PickTeam = function (_React$Component) {
       var positions = this.state.positions;
 
       return _react2.default.createElement(
-        _react2.default.Fragment,
-        null,
+        'div',
+        { className: 'pickteam' },
         _react2.default.createElement(
           'h1',
           null,

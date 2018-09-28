@@ -32,6 +32,7 @@ h1{
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  
 }
 /* Button on home page to go to pickTeam */
 .navbutton {
@@ -60,6 +61,9 @@ h1{
   grid-column-gap: 5px;
   grid-row-gap: 5px;
   font-family: 'Gaegu', cursive;
+  background-image: url(images/pitch.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .allPlayerPos{
@@ -471,4 +475,10 @@ margin-left: auto;
 .homeimg{
   height: 100%;
   width: 100%;
+}
+
+.pickteam{
+  /* background-image: url(images/pitch.png);
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
